@@ -6,7 +6,7 @@ require 'pry'
 
 class EmailAddressParser
 
-  attr_reader :list
+  attr_accessor :list
 
   def initialize(unformatted_emails)
     self.parse(unformatted_emails)
