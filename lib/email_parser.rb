@@ -9,13 +9,12 @@ class EmailAddressParser
   attr_accessor :list
 
   def initialize(unformatted_emails)
-    self.parse(unformatted_emails)
+    @list << self.parse(unformatted_emails)
   end #new
 
   def parse(unformatted_emails)
     sep_emails = unformatted_emails.split(' ')
     clean_emails = sep_emails.collect {|email| email.include?(',') ? email.tr(',','') : email}
-    @list << clean_emails
     binding.pry
     clean_emails
   end #parse
