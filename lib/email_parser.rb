@@ -13,7 +13,8 @@ class EmailAddressParser
   end #new
 
   def parse
-    sep_emails = @list.split(' ')
+    sep_emails = @list.split(/, /)
+    binding.pry
     clean_emails = []
     sep_emails.each do |email|
       stripped_email = email.include?(',') ? email.tr(',','') : email
