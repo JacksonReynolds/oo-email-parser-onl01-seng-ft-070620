@@ -9,7 +9,7 @@ class EmailAddressParser
   attr_accessor :list
 
   def initialize(unformatted_emails)
-    binding.pry
+    # binding.pry
     @list = unformatted_emails
   end #new
 
