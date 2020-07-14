@@ -11,6 +11,7 @@ class EmailAddressParser
     sep_emails = unformatted_emails.split(' ')
     clean_emails = sep_emails.collect {|email| email.include?(',') ? email.tr(',','') : email}
     @@all << clean_emails
+    clean_emails
   end #new
 
 end #EmailAddressParser
