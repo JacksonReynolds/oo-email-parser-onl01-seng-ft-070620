@@ -10,14 +10,14 @@ class EmailAddressParser
 
   def initialize(unformatted_emails)
     binding.pry
-    @list = self.parse(unformatted_emails)
+    @list = unformatted_emails
   end #new
 
-  def parse(unformatted_emails)
-    sep_emails = unformatted_emails.split(' ')
+  def parse
+    sep_emails = @list.split(' ')
     clean_emails = sep_emails.collect {|email| email.include?(',') ? email.tr(',','') : email}
     # binding.pry
-    clean_emails
+    @list = clean_emails
   end #parse
 
 end #EmailAddressParser
